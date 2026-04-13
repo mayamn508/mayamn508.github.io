@@ -1,0 +1,351 @@
+/* Personal Course Organizer - Professional Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9eef3 100%);
+    color: #1e2a3e;
+    line-height: 1.5;
+}
+
+/* Header with Gradient */
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    animation: slideDown 0.6s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header h1 {
+    font-size: 34px;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    font-size: 16px;
+    margin-top: 8px;
+    opacity: 0.9;
+}
+
+/* Navigation with Glass Effect */
+nav {
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 24px;
+    display: block;
+    border-radius: 40px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #f39c12;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 60%;
+}
+
+nav ul li a:hover {
+    background: rgba(243, 156, 18, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Main */
+main {
+    padding: 50px 24px;
+    min-height: 65vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Card with Shadow */
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08), 0 5px 10px -5px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card h2 {
+    color: #1e3c72;
+    margin-bottom: 24px;
+    border-right: 4px solid #f39c12;
+    padding-right: 18px;
+    font-size: 26px;
+}
+
+.card h3 {
+    color: #2c3e50;
+    margin: 22px 0 12px 0;
+    font-size: 20px;
+}
+
+/* Table - Clean Design */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px 12px;
+    text-align: center;
+}
+
+th {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    font-weight: 600;
+}
+
+td {
+    border-bottom: 1px solid #e2e8f0;
+    background: white;
+}
+
+tr {
+    transition: all 0.2s ease;
+}
+
+tr:hover td {
+    background: #fef9e6;
+    transform: scale(1.01);
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1e3c72;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+input:focus, textarea:focus {
+    border-color: #f39c12;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(243, 156, 18, 0.1);
+    transform: translateY(-2px);
+}
+
+input:hover, textarea:hover {
+    border-color: #cbd5e1;
+}
+
+/* Button */
+button {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+}
+
+button:hover::before {
+    width: 200%;
+    height: 200%;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Contact Info */
+.contact-info {
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    padding: 22px;
+    border-radius: 20px;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.contact-info:hover {
+    transform: translateX(6px);
+    background: linear-gradient(135deg, #fff8f0, #fef3e8);
+}
+
+.contact-info p {
+    margin: 12px 0;
+    font-size: 16px;
+}
+
+hr {
+    margin: 25px 0;
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #f39c12, transparent);
+}
+
+/* Footer */
+footer {
+    background: #1e293b;
+    color: #94a3b8;
+    text-align: center;
+    padding: 24px;
+    margin-top: 40px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e3c72;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f39c12;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    nav ul li a {
+        padding: 8px 20px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    main {
+        padding: 30px 16px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    .card h2 {
+        font-size: 22px;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+    
+    button {
+        width: 100%;
+    }
+    
+    .contact-info:hover {
+        transform: translateX(0);
+    }
+}
